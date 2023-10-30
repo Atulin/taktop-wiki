@@ -1,0 +1,20 @@
+---
+layout: main-layout.njk
+---
+
+<h1>{{ title }}</h1>
+
+<article>
+  {{ content | safe }}
+</article>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    border: 1px solid gray;
+    padding: 0.2rem 0.5rem;
+  }
+</style>
