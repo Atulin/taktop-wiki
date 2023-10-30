@@ -1,3 +1,6 @@
 {
-    "layout": "wiki-layout.njk"
+    "layout": "wiki-layout.njk",
+    "eleventyNavigation": {
+        "key": "Wiki"
+    }
 }

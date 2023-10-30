@@ -7,7 +7,17 @@
 
     <link rel="stylesheet" href="/css/style.css" />
   </head>
+
   <body>
-    {{ content | safe }}
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer id="footer">
+      <span class="copy">Copyright &copy; 2023 — {% year %} Angius</span>
+      <span class="source">
+        <a href="https://github.com/Atulin/taktop-wiki">Source code</a>
+      </span>
+    </footer>
   </body>
 </html>

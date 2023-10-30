@@ -1,0 +1,13 @@
+---
+title: Home
+---
+
+<nav>
+  <ul class="nav-list">
+    {%- for child in page | children %}
+    <li>
+      <a href="{{ child.url }}">{{ child.data.title }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,35 @@
+nav {
+  ul.nav-list {
+    list-style: none;
+
+    li {
+      a {
+      }
+    }
+  }
+}
+
+#toc {
+  float: right;
+  border: 1px solid gray;
+  padding: 0.5rem;
+
+  hr {
+    margin: 0.25rem 0;
+    height: 1px;
+    border: none;
+    background-color: gray;
+  }
+
+  ol {
+    list-style: none;
+
+    li {
+      padding-bottom: 0.25rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @font-face {
   font-family: "Raleway Var";
   font-style: normal;
@@ -20,4 +22,14 @@
 
 body {
   font-family: "Raleway Var", sans-serif;
+}
+
+// Define header sizes
+$max-header: 6;
+@for $i from 1 through $max-header {
+  h#{$i} {
+    font-size: calc(2 / math.sqrt($i)) * 100%;
+    margin: math.floor(calc(1 / math.sqrt($i) * 10)) * 1px 0;
+    width: auto;
+  }
 }
