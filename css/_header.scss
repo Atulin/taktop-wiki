@@ -1,4 +1,12 @@
 #header {
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.432);
+  display: flex;
+  align-items: center;
+
+  .main-nav {
+    margin-right: auto;
+    display: flex;
+    gap: 0.5rem;
+  }
 }

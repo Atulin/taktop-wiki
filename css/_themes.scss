@@ -1,0 +1,37 @@
+@mixin light {
+  --bg: white;
+  --fg: black;
+  --accent: blue;
+  --shade: rgba(0, 0, 0, 0.075);
+
+  --link: rgb(47, 47, 231);
+  --link-visited: rgb(117, 58, 196);
+  --link-hover: blue;
+}
+
+@mixin dark {
+  --bg: rgb(30, 27, 32);
+  --fg: white;
+  --accent: blue;
+  --shade: rgba(255, 255, 255, 0.075);
+
+  --link: rgb(164, 164, 255);
+  --link-visited: rgb(152, 104, 184);
+  --link-hover: rgb(156, 174, 255);
+}
+
+html {
+  @include light();
+
+  @media (prefers-color-scheme: dark) {
+    @include dark();
+  }
+
+  &[theme="dark"] {
+    @include dark();
+  }
+
+  &[theme="light"] {
+    @include light();
+  }
+}
