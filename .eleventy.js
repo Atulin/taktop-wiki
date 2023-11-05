@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 const swc = require("@swc/core");
 const { minify } = require("terser");
 
@@ -22,6 +24,7 @@ module.exports = function (cfg) {
     });
 
     cfg.addShortcode("year", () => `${new Date().getFullYear()}`);
+    cfg.addShortcode("bust", () => `${Date.now()}-${crypto.randomBytes(20).toString('hex')}`)
 
     cfg.addPassthroughCopy('fonts');
     cfg.addPassthroughCopy('images');
