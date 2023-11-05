@@ -10,13 +10,18 @@
 
   // Initial theme
   (() => {
-    const theme = localStorage.getItem("theme") ?? "";
+    const theme = localStorage.getItem("theme") ?? "auto";
     document.documentElement.setAttribute("theme", theme);
-    btn.innerHTML = (
-      optionBtns
-        .find((b) => b.dataset.theme === theme)
-        ?.querySelector("svg") as SVGSVGElement
-    ).outerHTML;
+
+    const currentThemeBtn = optionBtns.find((b) => b.dataset.theme === theme);
+
+    if (currentThemeBtn) {
+      const svg = currentThemeBtn.querySelector("svg") as SVGSVGElement;
+      btn.innerHTML = svg.outerHTML;
+    } else {
+      console.error("Button not found");
+      console.error(`Current theme is ${theme}`);
+    }
   })();
 
   // Toggle menu
@@ -27,7 +32,7 @@
   // Handle theme change
   optionBtns.forEach((b) =>
     b.addEventListener("click", () => {
-      const theme = b.dataset.theme ?? "";
+      const theme = b.dataset.theme ?? "auto";
 
       document.documentElement.setAttribute("theme", theme);
       localStorage.setItem("theme", theme);
